@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<liwenx:config xmlns:liwenx="http://liwenx.sourceforge.net">
+	<!-- Templates -->
+	<liwenx:template name="template1" source="classpath:/net/sf/liwenx/config/templates/template1.xml">
+		<liwenx:post-router name="postrouter2"/>
+	</liwenx:template>
+	<liwenx:template name="template2" source="classpath:/net/sf/liwenx/config/templates/template2.xml">
+		<liwenx:post-router name="postrouter1"/>
+	</liwenx:template>
+	<liwenx:template name="template3" source="classpath:/net/sf/liwenx/config/templates/template3.xml"/>
+	
+	<!-- Pages -->
+	<liwenx:page name="page1" source="classpath:/net/sf/liwenx/config/pages/page1.xml" template="template1" private="true"/>
+	<liwenx:page name="page2" source="component2" private="false" single-component="true">
+		<liwenx:post-router name="postrouter2"/>
+	</liwenx:page>
+	<liwenx:page name="page3" source="classpath:/net/sf/liwenx/config/pages/page3.xml" template="template2" private="true" single-component="false">
+		<liwenx:post-router name="postrouter3"/>
+	</liwenx:page>
+	<liwenx:page name="page4" source="classpath:/net/sf/liwenx/config/pages/page4.xml" template="template1"/>
+	
+</liwenx:config>

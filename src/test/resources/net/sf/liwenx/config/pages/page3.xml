@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<page xmlns:liwenx="http://liwenx.sourceforge.net">
+
+	<liwenx:extension-point name="body">
+		<!-- Body for page 3 -->
+		<body-page3>body 3
+			<body2>body 2</body2>
+		</body-page3>
+		<liwenx:component name="component3"/>
+	</liwenx:extension-point>
+
+	<liwenx:extension-point name="footer">
+		<!-- footer for page 3 -->
+		<footers>
+			<footer1>f1</footer1>
+			<footer2>f1</footer2>
+		</footers>
+		<footers2></footers2>
+		<liwenx:component name="component2"/>
+	</liwenx:extension-point>
+</page>

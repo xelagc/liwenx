@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<page xmlns:liwenx="http://liwenx.sourceforge.net">
+	<head>
+		<title type="text">Título 1</title>
+	</head>
+	<body>
+		<liwenx:component name="component1"/>
+	</body>
+	<footer>
+		<liwenx:extension-point/>
+	</footer>
+</page>

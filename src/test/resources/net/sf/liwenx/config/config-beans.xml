@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:/net/sf/liwenx/message"/>
+		<property name="cacheSeconds" value="-1"/>
+	</bean>
+	
+	<bean id="systemMessageSource" class="net.sf.liwenx.util.DefaultLocaleMessageSource">
+		<property name="messageSource" ref="messageSource"/>
+	</bean>
+	
+	<bean id="postrouter1" class="net.sf.liwenx.config.DummyPostRouter"/>
+	<alias name="postrouter1" alias="postrouter2"/>
+	<alias name="postrouter1" alias="postrouter3"/>
+
+	<bean id="component1" class="net.sf.liwenx.config.DummyPageComponent"/>
+	<alias name="component1" alias="component2"/>
+	<alias name="component1" alias="component3"/>
+
+
+</beans>
