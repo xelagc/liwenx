@@ -28,9 +28,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:svn:https://svn.code.sf.net/p/liwenx/code/trunk/liwenx</connection>
-		<developerConnection>scm:svn:https://svn.code.sf.net/p/liwenx/code/trunk/liwenx</developerConnection>
-		<url>scm:svn:https://svn.code.sf.net/p/liwenx/code/trunk/liwenx</url>
+		<connection>scm:git:git@github.com:xelagc/liwenx.git</connection>
+		<developerConnection>scm:git:git@github.com:xelagc/liwenx.git</developerConnection>
+		<url>scm:git:git@github.com:xelagc/liwenx.git</url>
 	</scm>
 
 	<build>
@@ -61,9 +61,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.0</version>
+				<version>2.5.2</version>
 				<configuration>
-					<tagBase>https://svn.code.sf.net/p/liwenx/code/tags</tagBase>
+					<!-- <tagBase>https://svn.code.sf.net/p/liwenx/code/tags</tagBase>-->
 				</configuration>
 			</plugin>
 		</plugins>
@@ -147,20 +147,30 @@
 			<id>liwenx.sf.net</id>
 			<url>scp://shell.sourceforge.net/home/groups/l/li/liwenx/htdocs</url>
 		</site-->
-		<repository>
+		<!-- <repository>
 			<uniqueVersion>false</uniqueVersion>
 			<id>ssh-liwenx</id>
 			<url>scp://xelagc,liwenx@shell.sourceforge.net/home/project-web/liwenx/htdocs/maven2</url>
-		</repository>
+		</repository>-->
 		<!-- <repository>
 			<uniqueVersion>false</uniqueVersion>
 			<id>ssh-liwenx</id>
 			<url>file:///var/maven/repository</url>
 		</repository>-->
-		<snapshotRepository>
+		<!-- <snapshotRepository>
 			<uniqueVersion>true</uniqueVersion>
 			<id>ssh-liwenx-snapshot</id>
 			<url>scp://xelagc,liwenx@shell.sourceforge.net/home/project-web/liwenx/htdocs/maven2-snapshot</url>
+		</snapshotRepository>-->
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>git-release</id>
+			<url>file:///Users/xelagc/workspace/maven-repo/releases</url>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>git-snapshot</id>
+			<url>file:///Users/xelagc/workspace/maven-repo/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 
