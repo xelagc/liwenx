@@ -69,10 +69,10 @@ public abstract class AbstractLiwenxResponse implements LiwenxResponse{
 	}
 	
 	void addCookies(int pos,List<Cookie> cookies){
-		if(cookies==null){
-			cookies = new LinkedList<Cookie>();
+		if(this.cookies==null){
+			this.cookies = new LinkedList<Cookie>();
 		}
-		cookies.addAll(pos, cookies);
+		this.cookies.addAll(pos, cookies);
 	}
 
 	/** (non-Javadoc)

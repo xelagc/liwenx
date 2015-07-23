@@ -234,7 +234,7 @@ public class LiwenxImpl implements Liwenx, ApplicationContextAware {
 							resp = processPage(request, ((InternalRedirectionResponse) resp).getLocator(), remainingRedirections - 1);
 							if (!CollectionUtils.isEmpty(cookies)) {
 								if (resp instanceof AbstractLiwenxResponse) {
-									((InternalRedirectionResponse) resp).addCookies(0, cookies);
+									((AbstractLiwenxResponse) resp).addCookies(0, cookies);
 								} else {
 									for (Cookie c : cookies) {
 										resp.addCookie(c);
