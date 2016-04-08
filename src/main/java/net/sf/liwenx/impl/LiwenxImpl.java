@@ -144,7 +144,7 @@ public class LiwenxImpl implements Liwenx, ApplicationContextAware {
 							if (v == null) {
 								v = view;
 							}
-							v.processView(doc, l.getLocale(), device, userAgentGroup, response.getWriter());
+							v.processView(lRequest, doc, l.getLocale(), device, userAgentGroup, response.getWriter());
 						}
 					} else {
 						// JsonResponse

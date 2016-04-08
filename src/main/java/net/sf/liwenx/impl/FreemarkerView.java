@@ -31,6 +31,7 @@ import javax.servlet.ServletConfig;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import net.sf.liwenx.Device;
+import net.sf.liwenx.LiwenxRequest;
 import net.sf.liwenx.LiwenxView;
 import net.sf.liwenx.util.UnifiedLocaleMessageSource;
 import nu.xom.Document;
@@ -84,7 +85,7 @@ public class FreemarkerView implements LiwenxView, InitializingBean, ServletConf
 	 * @see net.sf.liwenx.LiwenxView#processView(nu.xom.Document, java.util.Locale, Device, java.lang.String, java.io.Writer)
 	 */
 	@Override
-	public void processView(Document xml, Locale locale, Device device, String userAgentGroup, Writer out) throws Exception {
+	public void processView(LiwenxRequest request, Document xml, Locale locale, Device device, String userAgentGroup, Writer out) throws Exception {
 		final Template t = config.getTemplate(mainTemplate, locale);
 		if (t != null) {
 			Map<Object, Object> rootModel = new HashMap<Object, Object>();

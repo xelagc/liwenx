@@ -32,5 +32,5 @@ import nu.xom.Document;
  */
 public interface LiwenxView {
 
-	void processView(Document xml, Locale locale, Device device, String userAgentGroup, Writer out) throws Exception;
+	void processView(LiwenxRequest request, Document xml, Locale locale, Device device, String userAgentGroup, Writer out) throws Exception;
 }
