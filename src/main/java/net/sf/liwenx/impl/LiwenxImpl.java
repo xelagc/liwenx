@@ -112,7 +112,9 @@ public class LiwenxImpl implements Liwenx, ApplicationContextAware {
 				processHeaders(resp, response);
 				processCookies(resp, response);
 				if (resp instanceof ExternalRedirectionResponse) {
-					response.sendRedirect(((ExternalRedirectionResponse) resp).getRedirectTo());
+					//response.sendRedirect(((ExternalRedirectionResponse) resp).getRedirectTo());
+					response.setStatus(resp.getStatusCode());
+					response.addHeader("Location", response.encodeRedirectURL(((ExternalRedirectionResponse)resp).getRedirectTo()));
 				} else if (resp instanceof BinaryResponse) {
 					BinaryResponse bResp = (BinaryResponse) resp;
 					response.setContentType(bResp.getMimeType().toString());

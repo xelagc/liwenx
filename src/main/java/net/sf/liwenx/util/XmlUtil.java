@@ -34,11 +34,11 @@ import nu.xom.ValidityException;
  * 
  */
 public final class XmlUtil {
-	
+
 	/**
 	 * Private constructor
 	 */
-	private XmlUtil(){
+	private XmlUtil() {
 		// nothing to do
 	}
 
@@ -56,53 +56,73 @@ public final class XmlUtil {
 		final Builder builder = new Builder();
 		return builder.build(input);
 	}
-	
+
 	/**
 	 * It replace oldNode by children of newParentNode
 	 * 
 	 * @param oldNode - node to remove
 	 * @param newParentNode - parent of children to add
 	 */
-	public static void replaceElementByChildren(Element oldNode, Element newParentNode){
+	public static void replaceElementByChildren(Element oldNode, Element newParentNode) {
 		int insertionPoint = oldNode.getParent().indexOf(oldNode);
-		for(int i=0;i<newParentNode.getChildCount();i++){
+		for (int i = 0; i < newParentNode.getChildCount(); i++) {
 			final Node child = newParentNode.getChild(i);
 			oldNode.getParent().insertChild(child.copy(), ++insertionPoint);
 		}
 		oldNode.getParent().removeChild(oldNode);
 	}
-	
-	public static void addAttribute(Element elem, String name, Object value){
-		elem.addAttribute(new Attribute(name,value.toString()));
-	}
-	
 
-	public static void addAttribute(Element elem, String name, byte value){
+	public static void addAttribute(Element elem, String name, Object value) {
+		elem.addAttribute(new Attribute(name, value.toString()));
+	}
+
+	public static void addAttribute(Element elem, String name, byte value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, short value){
+	public static void addAttribute(Element elem, String name, short value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, int value){
+	public static void addAttribute(Element elem, String name, int value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, long value){
+	public static void addAttribute(Element elem, String name, long value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, float value){
+	public static void addAttribute(Element elem, String name, float value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, double value){
+	public static void addAttribute(Element elem, String name, double value) {
 		addAttribute(elem, name, String.valueOf(value));
 	}
 
-	public static void addAttribute(Element elem, String name, boolean value){
+	public static void addAttribute(Element elem, String name, boolean value) {
 		addAttribute(elem, name, String.valueOf(value));
+	}
+
+	public static Element createElement(String name, String value, Element parent) {
+		return createElement(name, null, value, parent);
+	}
+
+	public static Element createElement(String name, String uri, String value, Element parent) {
+		Element elem;
+		if (uri != null) {
+			elem = new Element(name, uri);
+		} else {
+			elem = new Element(name);
+		}
+		if (value != null) {
+			elem.appendChild(value);
+		}
+		if (parent != null) {
+			parent.appendChild(elem);
+		}
+
+		return elem;
 	}
 
 }
